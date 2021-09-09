@@ -11,7 +11,7 @@
 	<key>Input</key>
 	<dict>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/rico/%NAME%</string>
+		<string>apps/ricoh/%NAME%</string>
 		<key>NAME</key>
 		<string>RICOH THETA</string>
 		<key>pkginfo</key>
@@ -25,7 +25,7 @@
 			<key>developer</key>
 			<string>Ricoh Co., Ltd.</string>
 			<key>display_name</key>
-			<string>RICOH THETA</string>
+			<string>RICOH THETA Basic app</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -35,7 +35,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.pnerum.download.RICOHTHETA</string>
+	<string>com.github.pnerum.download.RICOHTHETA-Basic-app</string>
 	<key>Process</key>
 	<array>
 		<dict>
