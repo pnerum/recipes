@@ -5,9 +5,9 @@
 	<key>Comment</key>
 	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
-	<string>Downloads the latest version of ReaMote and imports it into Munki.</string>
+	<string>Downloads the latest version of Reaper-arm and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.pnerum.munki.ReaMote</string>
+	<string>com.github.pnerum.munki.Reaper-arm</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
@@ -37,7 +37,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.pnerum.download.Reaper-arm</string>
+	<string>com.github.pnerum.download.reaper-arm</string>
 	<key>Process</key>
 	<array>
 		<dict>
