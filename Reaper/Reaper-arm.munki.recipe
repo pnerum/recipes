@@ -16,6 +16,8 @@
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
 		<string>REAPER-ARM</string>
+		<key>category</key>
+		<string>%MUNKI_CATEGORY%</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
