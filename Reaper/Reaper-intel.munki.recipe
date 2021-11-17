@@ -5,17 +5,17 @@
 	<key>Comment</key>
 	<string>Edited recipe by pnerum from orbsmiv</string>
 	<key>Description</key>
-	<string>Downloads the latest version of Reaper-arm and imports it into Munki.</string>
+	<string>Downloads the latest version of Reaper for Intel and imports it into Munki.</string>
 	<key>Identifier</key>
-	<string>com.github.pnerum.munki.Reaper-arm</string>
+	<string>com.github.pnerum.munki.Reaper-intel</string>
 	<key>Input</key>
 	<dict>
 		<key>APP_FILENAME</key>
-		<string>REAPER-ARM</string>
+		<string>REAPER</string>
 		<key>MUNKI_REPO_SUBDIR</key>
 		<string>apps/%NAME%</string>
 		<key>NAME</key>
-		<string>REAPER-ARM</string>
+		<string>REAPER</string>
 		<key>pkginfo</key>
 		<dict>
 			<key>catalogs</key>
@@ -27,7 +27,7 @@
 			<key>developer</key>
 			<string>Cockos Incorporated</string>
 			<key>display_name</key>
-			<string>REAPER-ARM</string>
+			<string>REAPER</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
@@ -37,7 +37,7 @@
 	<key>MinimumVersion</key>
 	<string>1.0.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.pnerum.download.reaper-arm</string>
+	<string>com.github.pnerum.download.reaper-intel</string>
 	<key>Process</key>
 	<array>
 		<dict>
