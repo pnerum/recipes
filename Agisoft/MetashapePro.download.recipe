@@ -31,15 +31,15 @@
                 <key>result_output_var_name</key>
                 <string>match</string>
             </dict>
-        <dict>
-            <key>Processor</key>
+        </dict>
+<key>Processor</key>
             <string>URLDownloader</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
                 <string>%match%</string>
             </dict>
-        </dict>
+		</dict>
 		<dict>
 			<key>Processor</key>
 			<string>EndOfCheckPhase</string>
