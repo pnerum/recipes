@@ -29,7 +29,7 @@
                 <key>re_pattern</key>
                 <string>https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_[\d.]+_[\d.]+_[\d.]+.dmg</string>
                 <key>result_output_var_name</key>
-                <string>match</string>
+                <string>url</string>
             </dict>
         </dict>
 <key>Processor</key>
@@ -37,7 +37,6 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>%match%</string>
             </dict>
 		</dict>
 		<dict>
