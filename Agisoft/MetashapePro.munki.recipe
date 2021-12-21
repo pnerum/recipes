@@ -23,7 +23,7 @@
 			<key>developer</key>
 			<string>Agisoft</string>
 			<key>display_name</key>
-			<string>MetashapePro</string>
+			<string>Metashape Pro</string>
 			<key>name</key>
 			<string>%NAME%</string>
 			<key>unattended_install</key>
