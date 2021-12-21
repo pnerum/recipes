@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Comment</key>
-	<string>Created with Recipe Robot v2.2.0 (https://github.com/homebysix/recipe-robot)</string>
 	<key>Description</key>
 	<string>Downloads the latest version of MetashapePro.</string>
 	<key>Identifier</key>
@@ -18,26 +16,26 @@
 	<key>Process</key>
 	<array>
 		<dict>
-			<key>Arguments</key>
-			<dict>
-            <key>Processor</key>
-            <string>URLTextSearcher</string>
             <key>Arguments</key>
             <dict>
                 <key>url</key>
                 <string>https://www.agisoft.com/downloads/installer/</string>
                 <key>re_pattern</key>
-                <string>https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_[\d.]+_[\d.]+_[\d.]+.dmg</string>
-                <key>result_output_var_name</key>
-                <string>url</string>
+                <string>https://s3-eu-west-1\.amazonaws\.com/download\.agisoft\.com/metashape-pro_[\d.]+_[\d.]+_[\d.]+.dmg</string>
             </dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
         </dict>
-<key>Processor</key>
-            <string>URLDownloader</string>
+        <dict>
             <key>Arguments</key>
             <dict>
+                <key>filename</key>
+				<string>%NAME%.dmg</string>
                 <key>url</key>
+                <string>%match%</string>
             </dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
 		</dict>
 		<dict>
 			<key>Processor</key>
