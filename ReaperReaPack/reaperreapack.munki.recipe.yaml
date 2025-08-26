@@ -1,0 +1,26 @@
+Description: Gets the latest version of the installer package manager Reapack for Reaper, and import in to munki.
+Identifier: com.github.pnerum.munki.reaperreapack
+MinimumVersion: '2.3'
+ParentRecipe: com.github.pnerum.pkg.reaperreapack
+
+Input:
+  NAME: reaper_reapack
+  MUNKI_REPO_SUBDIR: apps/REAPER/%NAME%
+  pkginfo:
+    catalogs:
+      - testing
+    description: | 
+      ReaPack is a package manager for REAPER, the Digital Audio Workstation.
+      Discover, install and keep up to date your REAPER resources including ReaScripts, JS effects, extensions, themes, language packs, templates, web interfaces and more.
+    developer: cfillion
+    display_name: Reapack
+    name: "%NAME%"
+    unattended_install: true
+    unattended_uninstall: true
+    uninstall_method: removepackages
+
+Process:
+  - Processor: MunkiImporter
+    Arguments:
+      pkg_path: "%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg" 
+      repo_subdirectory: "%MUNKI_REPO_SUBDIR%"

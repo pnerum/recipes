@@ -1,0 +1,21 @@
+Description: Gets the latest version of Reapack package manager for REAPER. Use arm64 or x86_64 for the ARCH variable.
+Identifier: com.github.pnerum.download.reaperreapack
+MinimumVersion: "2.3"
+
+Input: 
+  NAME: reaper_reapack
+  ARCH: arm64
+
+Process:
+  - Processor: GitHubReleasesInfoProvider
+    Arguments:
+      github_repo: cfillion/reapack
+      sort_by_highest_tag_names: true
+      release_id: "latest"
+      asset_regex: reaper_reapack-%ARCH%.dylib
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%-%ARCH%.dylib"
+
+  - Processor: EndOfCheckPhase  

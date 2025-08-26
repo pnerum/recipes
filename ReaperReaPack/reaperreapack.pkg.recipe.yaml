@@ -1,0 +1,43 @@
+Description: Gets the latest version of the package manager Reapack for Reaper, and creates an installer pkg. 
+Identifier: com.github.pnerum.pkg.reaperreapack
+MinimumVersion: "2.3"
+ParentRecipe: com.github.pnerum.download.reaperreapack
+
+Input:
+  NAME: reaper_reapack
+  PKGID: com.reapack.reapack
+  ARCH: arm64
+
+Process:
+  - Processor: PkgRootCreator
+    Arguments:
+      pkgdirs:
+        Library: "0755"
+        Library/Application Support: "0755"
+        Library/Application Support/REAPER: "0755"
+        Library/Application Support/REAPER/UserPlugins: "0755"
+      pkgroot: "%RECIPE_CACHE_DIR%/pkg_root"
+
+  - Processor: Copier
+    Arguments:
+      source_path: "%RECIPE_CACHE_DIR%/downloads/reaper_reapack-%ARCH%.dylib"
+      destination_path: "%RECIPE_CACHE_DIR%/pkg_root/Library/Application Support/REAPER/UserPlugins/reaper_reapack-%ARCH%.dylib"
+
+  - Processor: PkgCreator
+    Arguments:
+      pkg_request:
+        chown:
+          - path: "Library"
+            user: "root"
+            group: "wheel"
+            mode: "0755"
+        pkgname: "%NAME%-%version%"
+        version: "%version%"
+        id: "%PKGID%"
+        options: "purge_ds_store"
+        pkgdir: "%RECIPE_CACHE_DIR%"
+
+  - Processor: PathDeleter
+    Arguments:
+      path_list:
+        - "%RECIPE_CACHE_DIR%/pkg_root"
