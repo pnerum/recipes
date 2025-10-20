@@ -1,5 +1,10 @@
-Description: Gets the latest version of the package manager Reapack for Reaper, and creates an installer pkg. 
-Comment: This item isn't signed nor notharized by Apple. You should check with your security team if you can deploy this software.
+Description: | 
+  Gets the latest version of the installer package manager Reapack for Reaper, and import in to munki.
+  
+  The file on disk isn't installed in the correct directory, the plugin wants it installed in $HOME/Library/Application Support/REAPER/UserPlugins. 
+  Use a tool like Outset to symlink in the correct folder of the current home.
+  
+  This item isn't signed nor notharized by Apple. You should check with your security team if you can deploy this software.
 Identifier: com.github.pnerum.pkg.reaperreapack
 MinimumVersion: "2.3"
 ParentRecipe: com.github.pnerum.download.reaperreapack
