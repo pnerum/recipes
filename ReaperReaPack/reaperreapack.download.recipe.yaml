@@ -1,4 +1,5 @@
 Description: Gets the latest version of Reapack package manager for REAPER. Use arm64 or x86_64 for the ARCH variable.
+Comment: This item isn't signed nor notharized by Apple. You should check with your security team if you can deploy this software.
 Identifier: com.github.pnerum.download.reaperreapack
 MinimumVersion: "2.3"
 

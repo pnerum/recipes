@@ -1,4 +1,5 @@
 Description: Gets the latest version of the package manager Reapack for Reaper, and creates an installer pkg. 
+Comment: This item isn't signed nor notharized by Apple. You should check with your security team if you can deploy this software.
 Identifier: com.github.pnerum.pkg.reaperreapack
 MinimumVersion: "2.3"
 ParentRecipe: com.github.pnerum.download.reaperreapack

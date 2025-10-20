@@ -1,4 +1,5 @@
 Description: Gets the latest version of the installer package manager Reapack for Reaper, and import in to munki.
+Comment: This item isn't signed nor notharized by Apple. You should check with your security team if you can deploy this software.
 Identifier: com.github.pnerum.munki.reaperreapack
 MinimumVersion: '2.3'
 ParentRecipe: com.github.pnerum.pkg.reaperreapack
