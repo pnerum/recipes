@@ -1,0 +1,26 @@
+Description: Import KiCad in to a munki repository
+Identifier: com.github.pnerum.munki.kicad
+MinimumVersion: "2.3"
+ParentRecipe: com.github.pnerum.pkg.kicad
+
+Input:
+  NAME: KiCad
+  MUNKI_REPO_SUBDIR: apps/%NAME%
+  CATEGORY: 
+  pkginfo:
+    catalogs:
+      - testing
+    category: "%CATEGORY%"
+    description: A Cross Platform and Open Source PCB Design Suite
+    developer: "%NAME%"
+    display_name: "%NAME%"
+    name: "%NAME%"
+    unattended_install: true
+    unattended_uninstall: true
+    uninstall_method: removepackages
+
+Process:
+  - Processor: MunkiImporter
+    Arguments:
+      pkg_path: "%RECIPE_CACHE_DIR%/%NAME%-%version%.pkg" 
+      repo_subdirectory: "%MUNKI_REPO_SUBDIR%"

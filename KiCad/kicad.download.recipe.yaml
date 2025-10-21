@@ -1,0 +1,26 @@
+Description: Downloads latest version of KiCad from Github
+Identifier: com.github.pnerum.download.kicad
+MinimumVersion: "2.3"
+
+Input:
+  NAME: KiCad
+
+Process:
+  - Processor: GitHubReleasesInfoProvider
+    Arguments:
+      github_repo: KiCad/kicad-source-mirror
+      release_id: "latest"
+      asset_regex: kicad-unified-universal-[0-9]+\.[0-9]+\.[0-9]+\.dmg
+
+  - Processor: URLDownloader
+    Arguments:
+      filename: "%NAME%.dmg"
+
+  - Processor: EndOfCheckPhase
+
+  - Processor: CodeSignatureVerifier
+    Arguments:
+      input_path: '%pathname%/%NAME%/%NAME%.app'
+      requirement: identifier "org.kicad.kicad" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = "9FQDHNY6U2"
+      deep_verification: True
+      strict_verification: True
